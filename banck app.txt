@@ -1,0 +1,38 @@
+class Account{
+    int ac_no;
+    String name;
+    float amount;
+    // method to init
+    void insert(int a,String n,float amt){
+        ac_no=a;
+        name=n;
+        amount = amt;
+    }
+    // deposite method
+    void deposite(float amt){
+        amount=amount+amt;
+        System.out.println(amt+"Diposited");
+    }
+    void withdraw(float amt){
+        if(amount<amt){
+            System.out.println("Insufficient Balance");
+        }else{
+            amount=amount-amt;
+            System.out.println(amt+"withdraw");
+        }
+    }
+    void checkBalance(){System.out.println("Balance is:"+amount);}
+    void display(){System.out.println(ac_no+""+name+""+amount);}
+}
+class TestAccount{
+    public static void main(String[] args){
+            Account a1=new Account();
+            a1.insert(9838337,"Fahad",1000);
+            a1.display();
+            a1.checkBalance();
+            a1.deposite(20000);
+            a1.checkBalance();
+            a1.withdraw(3000);
+            a1.checkBalance();
+        }
+    }
